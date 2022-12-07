@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+from pathlib import Path
+from subprocess import run
+
+
+def main():
+    latest_day = sorted(str(d) for d in Path(".").glob("day*"))[-1]
+    next_day = f"day{int(latest_day[3:]) + 1:02d}"
+    print(f"Bootstrapping {next_day}")
+    input(f"Press enter to continue...")
+    run(["cp", "-r", ".day00", next_day])
+
+
+if __name__ == "__main__":
+    main()
