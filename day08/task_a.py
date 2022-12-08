@@ -14,7 +14,7 @@ class SearchConfig(TypedDict):
     start_positions: list[tuple[int, int]]
 
 
-def get_trees(delta, start_position, width, height):
+def get_tree_positions(delta, start_position, width, height):
     """Get the coordinates of all trees in the given direction."""
     x, y = start_position
     while 0 <= x < height and 0 <= y < width:
@@ -55,7 +55,9 @@ def get_visible_trees(board, direction) -> set[tuple[int, int]]:
     visible_trees = set()
     for start_position in config["start_positions"]:
         max_tree_height = -1
-        for tree_position in get_trees(config["delta"], start_position, width, height):
+        for tree_position in get_tree_positions(
+            config["delta"], start_position, width, height
+        ):
             tree = board[tree_position[0]][tree_position[1]]
             if tree > max_tree_height:
                 visible_trees.add(tree_position)
