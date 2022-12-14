@@ -23,22 +23,22 @@ $ export PATH=$PATH:$(pwd)/bin
 
 ### run the code for the latest day
 ```bash
-$ run
+$ r
 ```
 
 ### run the code for the latest day and part
 ```bash
-$ run b
+$ r b
 ```
 
 ### run the code for a specific day
 ```bash
-$ run 1
+$ r 1
 ```
 
 ### run the code for a specific day and part
 ```bash
-$ run 1 b
+$ r 1 b
 ```
 
 ### bootstrap a new day
